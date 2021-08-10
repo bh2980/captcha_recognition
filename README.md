@@ -1,4 +1,4 @@
-# captcha_recognition
+# 경북대학교 수강신청 자동 입력 방지 문자 인식 프로그램
 
 참고 : [20211_AI](https://github.com/bh2980/20211_AI)
 
