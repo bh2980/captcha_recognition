@@ -2,7 +2,7 @@ CAPTCHA(자동 입력 방지) 문자 인식
 
 > 참고
 
-[OpenCV Word Segmenting on CAPTCHA Images](https://www.kaggle.com/fournierp/opencv-word-segmenting-on-captcha-images)
+[OpenCV Word Segmenting on CAPTCHA Images](https://www.kaggle.com/fournierp/opencv-word-segmenting-on-captcha-images) in Kaggle
 
 > 관련
 
