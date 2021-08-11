@@ -1,13 +1,5 @@
 CAPTCHA(자동 입력 방지) 문자 인식
 
-> 참고
-
-[OpenCV Word Segmenting on CAPTCHA Images](https://www.kaggle.com/fournierp/opencv-word-segmenting-on-captcha-images) in Kaggle
-
-> 관련
-
-[20211_AI](https://github.com/bh2980/20211_AI)
-
 > 개요
 
 경북대학교 수강신청 사이트의 자동 입력 방지 문자(CAPTCHA) 인식 프로그램 제작
@@ -34,3 +26,11 @@ selenium 라이브러리를 통해서 경북대학교 수강신청 홈페이지�
 0.5초마다 새로고침하여 캡챠 이미지를 다운로드하는 이미지 다운봇 제작
 
 ## 2. 데이터 라벨링
+
+> 참고
+
+[OpenCV Word Segmenting on CAPTCHA Images](https://www.kaggle.com/fournierp/opencv-word-segmenting-on-captcha-images) in Kaggle
+
+> 관련
+
+[20211_AI](https://github.com/bh2980/20211_AI)
