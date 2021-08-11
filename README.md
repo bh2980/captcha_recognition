@@ -38,8 +38,5 @@ selenium 라이브러리를 통해서 수강신청 홈페이지에 17분마다 �
 
 > 참고
 
-[OpenCV Word Segmenting on CAPTCHA Images](https://www.kaggle.com/fournierp/opencv-word-segmenting-on-captcha-images) in Kaggle
-
-> 관련
-
+[OpenCV Word Segmenting on CAPTCHA Images](https://www.kaggle.com/fournierp/opencv-word-segmenting-on-captcha-images) in Kaggle  
 [20211_AI](https://github.com/bh2980/20211_AI)
