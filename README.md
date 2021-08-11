@@ -1,6 +1,12 @@
-# 경북대학교 수강신청 자동 입력 방지 문자 인식 프로그램
+CAPTCHA(자동 입력 방지) 문자 인식
 
-참고 : [20211_AI](https://github.com/bh2980/20211_AI)
+> 참고
+
+[OpenCV Word Segmenting on CAPTCHA Images](https://www.kaggle.com/fournierp/opencv-word-segmenting-on-captcha-images)
+
+> 관련
+
+[20211_AI](https://github.com/bh2980/20211_AI)
 
 > 개요
 
