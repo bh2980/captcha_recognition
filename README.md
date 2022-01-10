@@ -55,10 +55,13 @@ selenium 라이브러리를 통해서 수강신청 홈페이지에 17분마다 �
 
 <img width="427" alt="화면 캡처 2022-01-11 060119" src="https://user-images.githubusercontent.com/74360958/148838844-c63c5fc2-ce3d-497b-9a52-b4f5505689b6.png">
 
-나뉘어진 data를 구글 드라이브에 업로드 후 colab에서 불러와 Nomalization한다.
+나뉘어진 data를 구글 드라이브에 업로드 후 colab에서 불러와 opencv의 adaptiveThreshold 함수를 이용해 후처리한다.
 
 ![p_6153](https://user-images.githubusercontent.com/74360958/148838045-fc1fcfa3-6e59-46e9-a5d3-40b9e9178437.png)
+후처리 전
+
 ![148837559-dd89375b-f4fa-4bde-b676-a69c0339ff21](https://user-images.githubusercontent.com/74360958/148838379-854941d3-3378-4c95-aee4-8a10eab51b6e.png)
+후처리 후
 
 4. 모델 정의
 
