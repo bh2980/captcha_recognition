@@ -101,7 +101,7 @@ model1.fit(d_train, l_train_1hot, epochs = 50)
 
 이후 unlabeled test set에 대해서 test를 진행해보았다.
 
-### - 글자 1개에 대한 테스트
+#### - 글자 1개에 대한 테스트
 
 <img width="415" alt="image" src="https://user-images.githubusercontent.com/74360958/148839373-f40d9141-c254-4d90-84ec-d30016d6799c.png">
 
@@ -109,7 +109,7 @@ b를 정상적으로 b로 출력하고 있다.(왼쪽 하단)
 
 
 
-### - 전체 글자에 대한 테스트
+#### - 전체 글자에 대한 테스트
 
 ![download](https://user-images.githubusercontent.com/74360958/148839662-c5e14c7b-813f-4ec1-9261-0addcd8cd18e.png)
 
