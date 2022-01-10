@@ -65,7 +65,7 @@ selenium 라이브러리를 통해서 수강신청 홈페이지에 17분마다 �
 ![148837559-dd89375b-f4fa-4bde-b676-a69c0339ff21](https://user-images.githubusercontent.com/74360958/148838379-854941d3-3378-4c95-aee4-8a10eab51b6e.png)  
 후처리 후
 
-4. 모델 정의
+## 4. 모델 정의
 
 ```python
 import tensorflow as tf
@@ -91,17 +91,17 @@ opt = tf.keras.optimizers.Adam(learning_rate=0.005)
 model1.compile(loss='categorical_crossentropy', optimizer = opt, metrics=['accuracy'])
 ```
 
-5. 학습
+## 5. 학습
 
 ```python
 model1.fit(d_train, l_train_1hot, epochs = 50)
 ```
 
-6. 테스트
+## 6. 테스트
 
 이후 unlabeled test set에 대해서 test를 진행해보았다.
 
-- 글자 1개에 대한 테스트
+### - 글자 1개에 대한 테스트
 
 <img width="415" alt="image" src="https://user-images.githubusercontent.com/74360958/148839373-f40d9141-c254-4d90-84ec-d30016d6799c.png">
 
@@ -109,7 +109,7 @@ b를 정상적으로 b로 출력하고 있다.(왼쪽 하단)
 
 
 
-- 전체 글자에 대한 테스트
+### - 전체 글자에 대한 테스트
 
 ![download](https://user-images.githubusercontent.com/74360958/148839662-c5e14c7b-813f-4ec1-9261-0addcd8cd18e.png)
 
@@ -124,7 +124,7 @@ opencv의 adaptiveThreshold 함수를 이용해 후처리 한 모습
 결과값으로 ma5c로 예측하는 모습이 보인다.(왼쪽 하단)
 
 
-7. 결론
+## 7. 결론
 
 unlabelded data에 대해서 돌려본 정확도는 대략 70~80% 정도로 나왔다.
 고정된 프레임으로 자르다보니 m과 n와 같이 가로로 긴 글자 중 잘릴 경우 비슷하게 나오는 글자에서 틀리는 경우가 많았다.
