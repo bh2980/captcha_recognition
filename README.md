@@ -1,37 +1,53 @@
-# CAPTCHA(자동 입력 방지 문자) 인식
+# Captcha Image Recognition
+<img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/> <img alt="Jupyter" src ="https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white"/> <img alt="Keras" src ="https://img.shields.io/badge/Keras-D00000.svg?&style=for-the-badge&logo=Keras&logoColor=white"/>
+<img alt="OpenCV" src ="https://img.shields.io/badge/OpenCV-5C3EE8.svg?&style=for-the-badge&logo=OpenCV&logoColor=white"/>
+<img alt="NumPy" src ="https://img.shields.io/badge/NumPy-013243.svg?&style=for-the-badge&logo=NumPy&logoColor=white"/>
+<img alt="scikit-learn" src ="https://img.shields.io/badge/scikit-learn-F7931E.svg?&style=for-the-badge&logo=scikit-learn&logoColor=white"/>
 
-> Description
+
+## Description  
 
 * 자동 입력 방지 문자(CAPTCHA) 이미지를 인식할 수 있는 딥러닝 모델 제작
 * 개발 인원 : 1명
-* 프로젝트 기간 : 
+* 프로젝트 기간 : 2021.08
+* 개발 당시 Google Colaboratory하였으나 현재 Jupyter Notebook으로 구동 가능하도록 수정  
 
-> 프로젝트 순서
+## IDE & Language  
+
+- ~~Google Colaboratory~~ Jupyter Notebook
+- python 3.7.7
+
+
+## Library
+
+```
+matplotlib                   3.5.2
+numpy                        1.22.4
+opencv-python                4.5.5.64
+sklearn                      0.0
+tensorflow                   2.9.1
+```
+
+## Project Process  
 
 1. 데이터 수집
 2. 데이터 라벨링
 3. 데이터 가공
-4. 모델 정의
-5. 학습
-6. 테스트
-7. 결론
+4. 모델
+5. 테스트
+6. 결론
+  
+## Project Detail
+<br>
 
-> 사용 언어 및 라이브러리
-
-- python 3.7.7
-- selenium
-- python-opencv
-- tkinter
-- 
-
-## 1. 데이터 수집
+>데이터 수집
 
 ![labeled 2021-08-11 오후 1_29_57](https://user-images.githubusercontent.com/74360958/128970367-8d9f1db1-a13b-4a3d-a572-da619e688df5.png)
 
-selenium 라이브러리를 통해서 수강신청 홈페이지에 17분마다 자동 로그인 후  
-0.1초마다 새로고침하여 캡챠 이미지를 다운로드하는 이미지 다운봇 제작
+selenium 라이브러리를 통해서 0.1초마다 새로고침하여 captcha 이미지를 다운로드하는 이미지 다운봇 제작  
+<br>
 
-## 2. 데이터 라벨링
+>데이터 라벨링
 
 ![캡처](https://user-images.githubusercontent.com/74360958/128970424-7b6c2f69-1ede-4fbd-8480-30d99c0c0cbe.PNG)
 
@@ -40,9 +56,10 @@ selenium 라이브러리를 통해서 수강신청 홈페이지에 17분마다 �
 해당 사진의 파일 이름을 입력한 보안코드로 바꿔주는 프로그램 작성 후 사용  
 
 [2, 3, 4, 5, 6, 7, 8, a, b, c, d, e, f, g, h, k, m, n, p, r, w, x, y] 중 4개의 글자로 구성된  
-총 6150개의 라벨링 된 데이터를 얻을 수 있었다.
+총 6150개의 라벨링 된 데이터를 얻을 수 있었다.  
+<br>
 
-## 3. 데이터 가공
+>데이테 가공
 
 ![frame2](https://user-images.githubusercontent.com/74360958/148836497-6961a5c0-bff8-40fa-9d35-a8e95aaa8b1f.png)
 
@@ -50,88 +67,73 @@ selenium 라이브러리를 통해서 수강신청 홈페이지에 17분마다 �
 
 - frame_size: 28px x 40px
 - start_padding : 5px
-- between_padding : 8px
+- overlapped : 8px
 
 그 후 opencv를 이용하여 grayscale로 로드 후 각 이미지를 frame에 맞게 자른다.
-
-![2_0](https://user-images.githubusercontent.com/74360958/148837068-4d96407a-6e93-4037-8e29-15bbc0c8ee64.png)
-![5_29](https://user-images.githubusercontent.com/74360958/148837098-b7dbf392-223d-4003-ab3a-b8eeeefd0159.png)
-![k_134](https://user-images.githubusercontent.com/74360958/148837125-a40fb673-e427-47bc-b383-b6bf705a18c2.png)
+<br>
 
 <img width="427" alt="화면 캡처 2022-01-11 060119" src="https://user-images.githubusercontent.com/74360958/148838844-c63c5fc2-ce3d-497b-9a52-b4f5505689b6.png">
 
 나뉘어진 data를 구글 드라이브에 업로드 후 colab에서 불러와  
 opencv의 adaptiveThreshold 함수를 이용해 후처리한다.
 
-![p_6153](https://user-images.githubusercontent.com/74360958/148838045-fc1fcfa3-6e59-46e9-a5d3-40b9e9178437.png)  
-후처리 전
+<br>
 
-![148837559-dd89375b-f4fa-4bde-b676-a69c0339ff21](https://user-images.githubusercontent.com/74360958/148838379-854941d3-3378-4c95-aee4-8a10eab51b6e.png)  
-후처리 후
+>모델
 
-## 4. 모델 정의
-
-```python
-import tensorflow as tf
-
-# act = "linear"
-# act = "sigmoid"
-# act = "tanh"
-act = "relu"
-
-# 3개의 층 128개의 노드
-model1 = tf.keras.models.Sequential([
-  # 28x28 입력층
-  tf.keras.layers.Flatten(input_shape=(40, 28)),
-  tf.keras.layers.Dense(128, activation=act),
-  tf.keras.layers.Dense(128, activation=act),
-  tf.keras.layers.Dense(128, activation=act),
-  tf.keras.layers.Dense(23, activation="softmax")
-])
-
-opt = tf.keras.optimizers.Adam(learning_rate=0.005)
-# opt = tf.keras.optimizers.RMSprop(learning_rate=0.01, momentum=0.1)
-
-model1.compile(loss='categorical_crossentropy', optimizer = opt, metrics=['accuracy'])
 ```
-
-## 5. 학습
-
-```python
-model1.fit(d_train, l_train_1hot, epochs = 50)
+Model: "sequential"
+_________________________________________________________________
+ Layer (type)                Output Shape              Param #   
+=================================================================
+ flatten (Flatten)           (None, 1120)              0         
+                                                                 
+ dense (Dense)               (None, 128)               143488    
+                                                                 
+ dense_1 (Dense)             (None, 128)               16512     
+                                                                 
+ dense_2 (Dense)             (None, 128)               16512     
+                                                                 
+ dense_3 (Dense)             (None, 23)                2967      
+                                                                 
+=================================================================
+Total params: 179,479
+Trainable params: 179,479
+Non-trainable params: 0
+_________________________________________________________________
 ```
+<br>
 
-## 6. 테스트
+
+>테스트
 
 이후 unlabeled test set에 대해서 test를 진행해보았다.
 
 #### - 글자 1개에 대한 테스트
 
-<img width="415" alt="image" src="https://user-images.githubusercontent.com/74360958/148839373-f40d9141-c254-4d90-84ec-d30016d6799c.png">
+|w|p|
+|---|---|
+|![image](https://user-images.githubusercontent.com/74360958/172026579-c4ad99c3-ead3-46aa-8bba-a54919e16d97.png)|![image](https://user-images.githubusercontent.com/74360958/172026906-4efa65d3-6a75-4539-bd4c-0ba56dfc3fae.png)|
+|![image](https://user-images.githubusercontent.com/74360958/172026894-4c581ff9-0f46-4b5e-a61b-dee78e8e18d7.png)|![image](https://user-images.githubusercontent.com/74360958/172026909-cbf8388c-1933-410d-bc43-82a6d4a9003d.png)|
 
-b를 정상적으로 b로 출력하고 있다.(왼쪽 하단)
-
-
+<br>
 
 #### - 전체 글자에 대한 테스트
 
-![download](https://user-images.githubusercontent.com/74360958/148839662-c5e14c7b-813f-4ec1-9261-0addcd8cd18e.png)
+|cycr|472h|
+|---|---|
+|![cycr](https://user-images.githubusercontent.com/74360958/172026954-3e8711fd-cbc7-432e-a373-46cb9d64b0d5.png)|![427h](https://user-images.githubusercontent.com/74360958/172027071-3e73390b-0d14-417d-997e-2884d54094a0.png)|
+|![image](https://user-images.githubusercontent.com/74360958/172026722-2d2fee1d-db8f-4224-9344-3a10b94b26fa.png)|![image](https://user-images.githubusercontent.com/74360958/172027076-a796bf3f-d99e-4c59-abb8-4cb092c63714.png)|
+|![image](https://user-images.githubusercontent.com/74360958/172026734-2c58474d-5a7d-44cb-8b87-145212987992.png)|![image](https://user-images.githubusercontent.com/74360958/172027092-97f0cbc2-087d-4c67-b364-0a8e56fc88c9.png)|
 
-ma5c라 적힌 이미지를 gray scale로 불러온 모습
+<br>
 
-![download](https://user-images.githubusercontent.com/74360958/148839707-855ed582-a941-4a99-b642-cf3dd716dae0.png)
+> 결론
 
-opencv의 adaptiveThreshold 함수를 이용해 후처리 한 모습
+못 쓸 정도는 아니지만 고정 크기로 자르다보니 m과 n와 같이 가로로 긴 글자 중 잘릴 경우 정확도가 떨어지는 부분이 아쉬움.
 
-<img width="498" alt="image" src="https://user-images.githubusercontent.com/74360958/148839800-f272cd1e-946b-4e4d-aef2-fa61c93f8239.png">
+<br>
 
-결과값으로 ma5c로 예측하는 모습이 보인다.(왼쪽 하단)
-
-
-## 7. 결론
-
-unlabelded data에 대해서 돌려본 정확도는 대략 70~80% 정도로 나왔다.  
-고정된 프레임으로 자르다보니 m과 n와 같이 가로로 긴 글자 중 잘릴 경우 비슷하게 나오는 글자에서 틀리는 경우가 많았다.  
 
 > 참고
 
