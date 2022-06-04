@@ -74,8 +74,7 @@ selenium 라이브러리를 통해서 0.1초마다 새로고침하여 captcha �
 
 <img width="427" alt="화면 캡처 2022-01-11 060119" src="https://user-images.githubusercontent.com/74360958/148838844-c63c5fc2-ce3d-497b-9a52-b4f5505689b6.png">
 
-나뉘어진 data를 구글 드라이브에 업로드 후 colab에서 불러와  
-opencv의 adaptiveThreshold 함수를 이용해 후처리한다.
+나뉘어진 data를 opencv를 후처리한다.
 
 <br>
 
@@ -102,12 +101,15 @@ Trainable params: 179,479
 Non-trainable params: 0
 _________________________________________________________________
 ```
+후처리된 각 글자별 테스트 셋을 이용해 위 모델을 학습시킨다.
+
 <br>
 
 
->테스트
+>테스트  
 
-이후 unlabeled test set에 대해서 test를 진행해보았다.
+unlabeled test set에 대해서 test를 진행해보았다.
+<br>
 
 #### - 글자 1개에 대한 테스트
 
