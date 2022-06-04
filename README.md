@@ -10,7 +10,7 @@
 * 자동 입력 방지 문자(CAPTCHA) 이미지를 인식할 수 있는 딥러닝 모델 제작
 * 개발 인원 : 1명
 * 프로젝트 기간 : 2021.08
-* 개발 당시 Google Colaboratory하였으나 현재 Jupyter Notebook으로 구동 가능하도록 수정  
+* 개발 당시 Google Colaboratory로 개발하였으나 현재 Jupyter Notebook으로 구동 가능하도록 수정  
 
 ## IDE & Language  
 
