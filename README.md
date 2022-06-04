@@ -1,8 +1,8 @@
 # Captcha Image Recognition
-<img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=for-the-badge&logo=Python&logoColor=white"/> <img alt="Jupyter" src ="https://img.shields.io/badge/Jupyter-F37626.svg?&style=for-the-badge&logo=Jupyter&logoColor=white"/> <img alt="Keras" src ="https://img.shields.io/badge/Keras-D00000.svg?&style=for-the-badge&logo=Keras&logoColor=white"/>
-<img alt="OpenCV" src ="https://img.shields.io/badge/OpenCV-5C3EE8.svg?&style=for-the-badge&logo=OpenCV&logoColor=white"/>
-<img alt="NumPy" src ="https://img.shields.io/badge/NumPy-013243.svg?&style=for-the-badge&logo=NumPy&logoColor=white"/>
-<img alt="scikit-learn" src ="https://img.shields.io/badge/scikit-learn-F7931E.svg?&style=for-the-badge&logo=scikit-learn&logoColor=white"/>
+<img alt="Python" src ="https://img.shields.io/badge/Python-3776AB.svg?&style=round&logo=Python&logoColor=white"/> <img alt="Jupyter" src ="https://img.shields.io/badge/Jupyter-F37626.svg?&style=round&logo=Jupyter&logoColor=white"/> <img alt="Keras" src ="https://img.shields.io/badge/Keras-D00000.svg?&style=round&logo=Keras&logoColor=white"/>
+<img alt="OpenCV" src ="https://img.shields.io/badge/OpenCV-5C3EE8.svg?&style=round&logo=OpenCV&logoColor=white"/>
+<img alt="NumPy" src ="https://img.shields.io/badge/NumPy-013243.svg?&style=round&logo=NumPy&logoColor=white"/>
+<img alt="scikit-learn" src ="https://img.shields.io/badge/scikit-learn-F7931E.svg?&style=round&logo=scikit-learn&logoColor=white"/>
 
 
 ## Description  
