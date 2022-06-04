@@ -25,7 +25,7 @@ def save(event):
 
     label["text"] = i
 
-file_list = glob.glob("chatcha*.png")
+file_list = glob.glob(r"D:\Github\captcha_recognition\captcha\unlabled\chapcah*.png")
 print(file_list)
 
 window = tk.Tk()

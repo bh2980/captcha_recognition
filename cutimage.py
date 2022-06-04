@@ -3,7 +3,7 @@ import numpy as np
 import glob
 import os
 
-img_list = glob.glob(r'C:\Users\bh2980\Desktop\captcha\unlabeled\*.png')
+img_list = glob.glob(r'D:\Github\captcha_recognition\captcha\unlabled\*.png')
 
 count = 1
 
@@ -29,7 +29,7 @@ for i in img_list:
         gap = 8
         
         first = dilation_image[0:50, start:start+w].copy()
-        cv2.imwrite('./' + str(index) +'.png', first)
+        cv2.imwrite(r'D:\Github\captcha_recognition\character\unlabeled\\' + str(index) +'.png', first)
         # cv2.imwrite('./' + i.split('\\')[6][count] + '_' + str(index) +'.png', first)
 
         # if i.split('\\')[6][count] == 'w' or i.split('\\')[6][count] == 'm' or i.split('\\')[6][count] == 'p':
